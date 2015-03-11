@@ -2,6 +2,9 @@
 use Digest::SHA qw( sha512_hex );
 use File::Slurp qw( slurp );
 
+# you don't really want to use this. Run diff -u against an empty
+# directory instead, then edit the diff.
+
 # emit a perl script that will recreate all the files in @ARGV, but is
 # editable as one Emacs buffer.  Warning: if and when an SHA-512
 # collision is found, it might be possible to put arbitrary Perl code
