@@ -53,10 +53,11 @@ sub scan_file {
 sub scan {
     my($path) = @_;
 
+    return undef if -l $path;
     return scan_dir($path) if -d $path;
     return scan_file($path) if -f $path;
 
-    die;
+    return undef;
 }
 
 my $lastdata;
